@@ -1,23 +1,35 @@
 "use client";
 import { useEffect } from "react";
-import { useTheme } from "next-themes";
 
-const COLORS = { light: "#F6F3EE", dark: "#0F0E0C" } as const;
+const LIGHT = "#F6F3EE"; // paper
+const DARK  = "#0F0E0C"; // ink
 
 /**
- * Keeps <meta name="theme-color"> in sync with the active theme so the
- * mobile browser status bar matches the app background (paper / ink).
+ * Replaces any media-queried theme-color metas with a single authoritative
+ * one, then keeps it in sync via MutationObserver so it fires the instant
+ * next-themes toggles the class on <html> — no React re-render delay.
  */
-export default function ThemeColor() {
-  const { resolvedTheme } = useTheme();
+function apply(isDark: boolean) {
+  const color = isDark ? DARK : LIGHT;
+  // Remove Next.js-generated media-queried metas to avoid browser picking
+  // the wrong one based on OS preference instead of the in-app toggle.
+  document.querySelectorAll('meta[name="theme-color"]').forEach((el) => el.remove());
+  const meta = document.createElement("meta");
+  meta.name = "theme-color";
+  meta.content = color;
+  document.head.appendChild(meta);
+}
 
+export default function ThemeColor() {
   useEffect(() => {
-    if (!resolvedTheme) return;
-    const color = COLORS[resolvedTheme as keyof typeof COLORS] ?? COLORS.light;
-    document.querySelectorAll('meta[name="theme-color"]').forEach((el) => {
-      el.setAttribute("content", color);
-    });
-  }, [resolvedTheme]);
+    const html = document.documentElement;
+    apply(html.classList.contains("dark"));
+    const observer = new MutationObserver(() =>
+      apply(html.classList.contains("dark"))
+    );
+    observer.observe(html, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
 
   return null;
 }
