@@ -36,7 +36,7 @@ const fade: Variants = {
   }),
 };
 
-const INPUT = "w-full bg-white dark:bg-ink-soft border border-zinc-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-[14px] text-ink dark:text-paper placeholder:text-ink/30 dark:placeholder:text-paper/25 focus:outline-none focus:border-vermillion focus:ring-2 focus:ring-vermillion/10 transition-all";
+const INPUT = "w-full bg-paper-soft dark:bg-ink-soft border border-zinc-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-[14px] text-ink dark:text-paper placeholder:text-ink/30 dark:placeholder:text-paper/25 focus:outline-none focus:border-vermillion focus:ring-2 focus:ring-vermillion/10 transition-all";
 const LABEL = "block text-[11px] font-semibold tracking-[0.08em] uppercase text-ink/55 dark:text-paper/45 mb-1.5";
 
 function SectionLabel({ text }: { text: string }) {
@@ -86,7 +86,7 @@ export default function ContactPage() {
         <div className="relative max-w-7xl mx-auto px-4 md:px-6">
           <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-vermillion mb-6">Contact</p>
           <h1 className="font-display text-[clamp(2.6rem,6vw,5rem)] text-ink dark:text-paper leading-[1.02] tracking-[-0.02em] mb-6 max-w-3xl">
-            Let&apos;s build something.<br /><span className="italic">Get in touch.</span>
+            Let&apos;s build something.<br /><span className="italic text-vermillion">Get in touch.</span>
           </h1>
           <p className="text-ink/65 dark:text-paper/60 text-[15px] max-w-xl leading-relaxed">
             Speak directly with our team — quotes within 24 hours,
@@ -104,7 +104,7 @@ export default function ContactPage() {
             <motion.div variants={fade} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0}>
               <SectionLabel text="Send an Enquiry" />
               <h2 className="font-display text-3xl md:text-[2.6rem] text-ink dark:text-paper leading-[1.05] tracking-[-0.02em] mb-8">
-                Tell us about<br /><span className="italic">your project.</span>
+                Tell us about<br /><span className="italic text-vermillion">your project.</span>
               </h2>
 
               <form onSubmit={submit} className="space-y-5">
@@ -192,7 +192,7 @@ export default function ContactPage() {
                   className={`relative border rounded-xl p-4 transition-colors ${
                     form.dept === label
                       ? "border-vermillion bg-vermillion/5 dark:bg-vermillion/8"
-                      : "border-zinc-200 dark:border-zinc-700 bg-white dark:bg-ink-soft hover:border-vermillion/50"
+                      : "border-zinc-200 dark:border-zinc-700 bg-paper-soft dark:bg-ink-soft hover:border-vermillion/50"
                   }`}>
                   <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-vermillion/60 via-vermillion/20 to-transparent rounded-t-xl" />
                   <p className="text-[12px] font-bold text-ink dark:text-paper mb-2.5">{label}</p>
@@ -220,7 +220,7 @@ export default function ContactPage() {
       </section>
 
       {/*  Address + Hours + WhatsApp  */}
-      <section className="py-12 md:py-20 lg:py-28 bg-white dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-12 md:py-20 lg:py-28 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <SectionLabel text="Visit & Connect" />
           <div className="grid md:grid-cols-3 gap-4">

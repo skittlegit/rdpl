@@ -128,7 +128,7 @@ export default function PortfolioPage() {
         <div className="relative max-w-7xl mx-auto px-4 md:px-6">
           <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-vermillion mb-6">Portfolio</p>
           <h1 className="font-display text-[clamp(2.6rem,6vw,5rem)] text-ink dark:text-paper leading-[1.02] tracking-[-0.02em] mb-6 max-w-3xl">
-            The work.<br /><span className="italic">Across every sector.</span>
+            The work.<br /><span className="italic text-vermillion">Across every sector.</span>
           </h1>
           <p className="text-ink/65 dark:text-paper/60 text-[15px] max-w-xl leading-relaxed">
             A curated selection of projects delivered for India&apos;s leading brands —
@@ -150,7 +150,7 @@ export default function PortfolioPage() {
                 className={`px-4 py-1.5 rounded-lg text-[12px] font-medium transition-all duration-200 ${
                   active === cat
                     ? "bg-ink dark:bg-paper text-paper dark:text-ink shadow-sm"
-                    : "border border-zinc-200 dark:border-zinc-700 text-mid hover:text-ink dark:hover:text-paper hover:border-zinc-300 dark:hover:border-zinc-600 bg-white dark:bg-ink-soft"
+                    : "border border-zinc-200 dark:border-zinc-700 text-mid hover:text-ink dark:hover:text-paper hover:border-zinc-300 dark:hover:border-zinc-600 bg-paper-soft dark:bg-ink-soft"
                 }`}
               >
                 {cat}
@@ -196,7 +196,7 @@ export default function PortfolioPage() {
                     </div>
                   </div>
                   {/* Info panel below image */}
-                  <div className="px-4 py-3.5 bg-white dark:bg-ink-soft border border-t-0 border-zinc-200 dark:border-zinc-700 rounded-b-2xl">
+                  <div className="px-4 py-3.5 bg-paper-soft dark:bg-ink-soft border border-t-0 border-zinc-200 dark:border-zinc-700 rounded-b-2xl">
                     <p className="text-[13px] font-semibold text-ink dark:text-paper leading-tight mb-0.5">
                       {project.title}
                     </p>
@@ -216,7 +216,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-10 md:py-16 bg-white dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-10 md:py-16 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="font-display text-2xl text-ink dark:text-paper tracking-[-0.01em]">

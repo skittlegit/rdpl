@@ -100,7 +100,7 @@ export default function TechnologyPage() {
         <div className="relative max-w-7xl mx-auto px-4 md:px-6">
           <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-vermillion mb-6">Technology</p>
           <h1 className="font-display text-[clamp(2.6rem,6vw,5rem)] text-ink dark:text-paper leading-[1.02] tracking-[-0.02em] mb-6 max-w-3xl">
-            Precision at scale.<br /><span className="italic">Two production lines.</span>
+            Precision at scale.<br /><span className="italic text-vermillion">Two production lines.</span>
           </h1>
           <p className="text-ink/65 dark:text-paper/60 text-[15px] max-w-xl leading-relaxed">
             HP Latex for premium quality and Eco-Solvent for durable outdoor applications —
@@ -143,7 +143,7 @@ export default function TechnologyPage() {
               </div>
             </div>
             {/* Spec card */}
-            <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-700 rounded-2xl p-8 bg-white dark:bg-ink-soft">
+            <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-700 rounded-2xl p-8 bg-paper-soft dark:bg-ink-soft">
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-vermillion/60 via-vermillion/20 to-transparent rounded-t-2xl" />
               <div className="font-display text-[6rem] font-bold text-ink/5 dark:text-paper/5 leading-none select-none mb-6">
                 HP
@@ -175,7 +175,7 @@ export default function TechnologyPage() {
       </section>
 
       {/*  Eco-Solvent  */}
-      <section className="py-12 md:py-20 lg:py-28 bg-white dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-12 md:py-20 lg:py-28 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <SectionLabel text="Production Line 02" />
           <div className="grid lg:grid-cols-2 gap-10 md:gap-14 items-start">
@@ -248,7 +248,7 @@ export default function TechnologyPage() {
             <div>
               <SectionLabel text="Compatible Media" />
               <h2 className="font-display text-2xl md:text-3xl text-ink dark:text-paper leading-[1.05] tracking-[-0.02em] mb-8">
-                200+ substrates<br /><span className="italic">for every application.</span>
+                200+ substrates<br /><span className="italic text-vermillion">for every application.</span>
               </h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {substrates.map(({ cat, items }, i) => (
@@ -259,7 +259,7 @@ export default function TechnologyPage() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     custom={i}
-                    className="border border-zinc-200 dark:border-zinc-700 rounded-xl p-5 bg-white dark:bg-ink-soft hover:border-vermillion/40 transition-colors"
+                    className="border border-zinc-200 dark:border-zinc-700 rounded-xl p-5 bg-paper-soft dark:bg-ink-soft hover:border-vermillion/40 transition-colors"
                   >
                     <p className="text-[10px] font-bold tracking-[0.18em] uppercase text-vermillion mb-3">{cat}</p>
                     <ul className="space-y-1.5">
@@ -279,7 +279,7 @@ export default function TechnologyPage() {
             <div>
               <SectionLabel text="Quality & Certifications" />
               <h2 className="font-display text-2xl md:text-3xl text-ink dark:text-paper leading-[1.05] tracking-[-0.02em] mb-8">
-                Standards you<br /><span className="italic">can verify.</span>
+                Standards you<br /><span className="italic text-vermillion">can verify.</span>
               </h2>
               <div className="space-y-4">
                 {certs.map(({ title, desc }, i) => (
@@ -290,7 +290,7 @@ export default function TechnologyPage() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     custom={i}
-                    className="relative overflow-hidden border border-zinc-200 dark:border-zinc-700 rounded-xl p-5 bg-white dark:bg-ink-soft hover:border-vermillion/40 transition-colors"
+                    className="relative overflow-hidden border border-zinc-200 dark:border-zinc-700 rounded-xl p-5 bg-paper-soft dark:bg-ink-soft hover:border-vermillion/40 transition-colors"
                   >
                     <div className="absolute top-0 left-0 bottom-0 w-0.5 bg-gradient-to-b from-vermillion/60 via-vermillion/20 to-transparent rounded-l-xl" />
                     <p className="text-[13px] font-semibold text-ink dark:text-paper mb-1.5 pl-1">{title}</p>
@@ -305,7 +305,7 @@ export default function TechnologyPage() {
       </section>
 
       {/*  CTA  */}
-      <section className="py-10 md:py-16 bg-white dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-10 md:py-16 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="font-display text-2xl text-ink dark:text-paper tracking-[-0.01em]">

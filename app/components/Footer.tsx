@@ -52,7 +52,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-ink border-t border-zinc-200 dark:border-zinc-800/50 transition-colors">
+    <footer className="bg-paper-soft dark:bg-ink border-t border-zinc-200 dark:border-zinc-800/50 transition-colors">
       <div className="max-w-7xl mx-auto px-6 pt-14 pb-8">
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">

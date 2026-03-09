@@ -7,8 +7,8 @@
   /* ── Print-industry colour palette ─────────────────────────────────── */
   --color-ink:              #0F0E0C;   /* rich black — warm press black   */
   --color-ink-soft:         #1C1A18;   /* secondary dark surface          */
-  --color-paper:            #F6F3EE;   /* uncoated stock white            */
-  --color-paper-soft:       #ECEAE4;   /* secondary light surface         */
+  --color-paper:            #EDE9E3;   /* uncoated stock white            */
+  --color-paper-soft:       #E4E0D9;   /* secondary light surface         */
   --color-vermillion:       #C84B0C;   /* Pantone 166 — print red-orange  */
   --color-vermillion-dark:  #a03c09;
   --color-mid:              #6B6560;   /* warm mid-gray — recycled paper  */

@@ -48,7 +48,7 @@ const fadeUp: Variants = {
 
 export default function TechnologySection() {
   return (
-    <section className="py-12 md:py-24 lg:py-32 bg-white dark:bg-ink-soft transition-colors">
+    <section className="py-12 md:py-24 lg:py-32 bg-paper-soft dark:bg-ink-soft transition-colors">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="flex items-end justify-between mb-8 md:mb-12">
@@ -58,7 +58,7 @@ export default function TechnologySection() {
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-ink dark:text-paper leading-[1.05] tracking-[-0.02em]">
               Two print lines.<br />
-              <span className="italic text-zinc-300 dark:text-zinc-700">Every application.</span>
+              <span className="italic text-vermillion">Every application.</span>
             </h2>
           </div>
           <Link
@@ -82,7 +82,7 @@ export default function TechnologySection() {
               <span className={`inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider mb-5 ${badgeClass}`}>
                 {badge}
               </span>
-              <h3 className={`font-display text-2xl font-bold tracking-[-0.01em] mb-0.5 ${accentClass}`}>
+              <h3 className={`font-display text-2xl font-bold tracking-[-0.01em] mb-0.5 text-ink dark:text-paper`}>
                 {name}
               </h3>
               <p className="text-[12px] font-medium text-vermillion/70 mb-8">{category}</p>

@@ -80,7 +80,7 @@ export default function AboutPage() {
         <div className="relative max-w-7xl mx-auto px-4 md:px-6 pb-12 md:pb-16">
           <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-vermillion mb-6">About Reddys Digital</p>
           <h1 className="font-display text-[clamp(2.6rem,6vw,5rem)] text-ink dark:text-paper leading-[1.02] tracking-[-0.02em] mb-6 max-w-3xl">
-            Two decades of craft,<br /><span className="italic">from Hyderabad.</span>
+            Two decades of craft,<br /><span className="italic text-vermillion">from Hyderabad.</span>
           </h1>
           <p className="text-ink/65 dark:text-paper/60 text-[15px] max-w-xl leading-relaxed">
             Since 2004, we have grown from a single printer to India&apos;s most integrated signage manufacturer —
@@ -124,7 +124,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {credentials.map(({ label, sub }, i) => (
               <motion.div key={label} variants={fade} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}
-                className="relative overflow-hidden border border-zinc-200 dark:border-zinc-700 rounded-2xl p-6 bg-white dark:bg-ink-soft hover:border-vermillion/50 transition-colors">
+                className="relative overflow-hidden border border-zinc-200 dark:border-zinc-700 rounded-2xl p-6 bg-paper-soft dark:bg-ink-soft hover:border-vermillion/50 transition-colors">
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-vermillion/60 via-vermillion/20 to-transparent rounded-t-2xl" />
                 <p className="text-[13px] font-semibold text-ink dark:text-paper mb-2">{label}</p>
                 <p className="text-[12px] text-ink/65 dark:text-paper/55 leading-relaxed">{sub}</p>
@@ -135,7 +135,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-12 md:py-20 lg:py-28 bg-white dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-12 md:py-20 lg:py-28 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <SectionLabel text="Our Journey" />
           <h2 className="font-display text-3xl md:text-[2.6rem] text-ink dark:text-paper leading-[1.05] tracking-[-0.02em] mb-14">
@@ -149,7 +149,7 @@ export default function AboutPage() {
                   className="grid grid-cols-[84px_1fr] gap-6 items-start">
                   <div className="text-right relative pt-[3px]">
                     <span className="font-display italic text-vermillion text-[15px] font-bold">{m.year}</span>
-                    <div className="absolute right-[-30px] top-[5px] w-3 h-3 rounded-full border-2 border-vermillion bg-white dark:bg-ink-soft shadow-sm" />
+                    <div className="absolute right-[-30px] top-[5px] w-3 h-3 rounded-full border-2 border-vermillion bg-paper-soft dark:bg-ink-soft shadow-sm" />
                   </div>
                   <div className="border border-zinc-200 dark:border-zinc-700 rounded-xl px-5 py-4 bg-paper dark:bg-ink hover:border-vermillion/40 transition-colors">
                     <p className="text-[13px] text-ink/80 dark:text-paper/70 leading-relaxed">{m.event}</p>
@@ -171,7 +171,7 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {values.map(({ icon: Icon, title, desc }, i) => (
               <motion.div key={title} variants={fade} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}
-                className="border border-zinc-200 dark:border-zinc-700 rounded-2xl p-6 bg-white dark:bg-ink-soft hover:border-vermillion/40 transition-colors">
+                className="border border-zinc-200 dark:border-zinc-700 rounded-2xl p-6 bg-paper-soft dark:bg-ink-soft hover:border-vermillion/40 transition-colors">
                 <div className="w-10 h-10 rounded-xl bg-vermillion/10 dark:bg-vermillion/15 flex items-center justify-center mb-5">
                   <Icon size={16} className="text-vermillion" />
                 </div>
@@ -184,7 +184,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-10 md:py-16 bg-white dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-10 md:py-16 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="font-display text-2xl text-ink dark:text-paper tracking-[-0.01em]">Ready to build your brand presence?</p>

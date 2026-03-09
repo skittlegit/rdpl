@@ -16,7 +16,7 @@ const tiles = [
 
 export default function AboutSection() {
   return (
-    <section className="py-12 md:py-24 lg:py-32 bg-white dark:bg-ink-soft transition-colors">
+    <section className="py-12 md:py-24 lg:py-32 bg-paper-soft dark:bg-ink-soft transition-colors">
       <div className="max-w-7xl mx-auto px-6">
 
         <motion.p
@@ -33,7 +33,7 @@ export default function AboutSection() {
           >
             Two decades of<br />
             signage craft<br />
-            <span className="italic text-zinc-300 dark:text-zinc-700">from Hyderabad.</span>
+            <span className="italic text-vermillion">from Hyderabad.</span>
           </motion.h2>
 
           <motion.div

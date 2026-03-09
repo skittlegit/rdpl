@@ -54,7 +54,7 @@ export default function ServicesGrid() {
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-ink dark:text-paper leading-[1.05] tracking-[-0.02em]">
               Everything under<br />
-              <span className="italic text-zinc-300 dark:text-zinc-700">one roof.</span>
+              <span className="italic text-vermillion">one roof.</span>
             </h2>
           </div>
           <Link

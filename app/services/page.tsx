@@ -66,7 +66,7 @@ export default function ServicesPage() {
         <div className="relative max-w-7xl mx-auto px-4 md:px-6 pb-12 md:pb-16">
           <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-vermillion mb-6">Services</p>
           <h1 className="font-display text-[clamp(2.6rem,6vw,5rem)] text-ink dark:text-paper leading-[1.02] tracking-[-0.02em] mb-6 max-w-3xl">
-            Everything in-house.<br /><span className="italic">Six specialisms.</span>
+            Everything in-house.<br /><span className="italic text-vermillion">Six specialisms.</span>
           </h1>
           <p className="text-ink/65 dark:text-paper/60 text-[15px] max-w-xl leading-relaxed">
             Six specialist divisions working in concert inside a single 50,000 sq.ft. campus —
@@ -91,12 +91,12 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <SectionLabel text="What We Do" />
           <h2 className="font-display text-3xl md:text-[2.6rem] text-ink dark:text-paper leading-[1.05] tracking-[-0.02em] mb-8 md:mb-12">
-            Every type of signage,<br /><span className="italic">manufactured here.</span>
+            Every type of signage,<br /><span className="italic text-vermillion">manufactured here.</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-5">
             {services.map(({ n, icon:Icon, title, desc, includes }, i) => (
               <motion.div key={n} variants={fade} initial="hidden" whileInView="visible" viewport={{ once:true }} custom={i}
-                className="group border border-zinc-200 dark:border-zinc-700 rounded-2xl p-7 bg-white dark:bg-ink-soft hover:border-vermillion/40 transition-colors">
+                className="group border border-zinc-200 dark:border-zinc-700 rounded-2xl p-7 bg-paper-soft dark:bg-ink-soft hover:border-vermillion/40 transition-colors">
                 <div className="flex items-start justify-between mb-4">
                   <div className="w-10 h-10 rounded-xl bg-vermillion/10 dark:bg-vermillion/15 flex items-center justify-center shrink-0">
                     <Icon size={16} className="text-vermillion" />
@@ -121,7 +121,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process */}
-      <section className="py-12 md:py-20 lg:py-28 bg-white dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-12 md:py-20 lg:py-28 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <SectionLabel text="How a Project Runs" />
           <h2 className="font-display text-3xl md:text-[2.6rem] text-ink dark:text-paper leading-[1.05] tracking-[-0.02em] mb-8 md:mb-12">
