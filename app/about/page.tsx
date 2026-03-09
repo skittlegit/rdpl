@@ -127,7 +127,7 @@ export default function AboutPage() {
                 className="relative overflow-hidden border border-zinc-200 dark:border-zinc-700 rounded-2xl p-6 bg-white dark:bg-ink-soft hover:border-vermillion/50 transition-colors">
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-vermillion/60 via-vermillion/20 to-transparent rounded-t-2xl" />
                 <p className="text-[13px] font-semibold text-ink dark:text-paper mb-2">{label}</p>
-                <p className="text-[12px] text-mid leading-relaxed">{sub}</p>
+                <p className="text-[12px] text-ink/65 dark:text-paper/55 leading-relaxed">{sub}</p>
               </motion.div>
             ))}
           </div>
@@ -188,7 +188,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="font-display text-2xl text-ink dark:text-paper tracking-[-0.01em]">Ready to build your brand presence?</p>
-            <p className="text-[13px] text-mid mt-1.5">Share your brief — we respond within one business day with a detailed quote.</p>
+            <p className="text-[13px] text-ink/65 dark:text-paper/55 mt-1.5">Share your brief — we respond within one business day with a detailed quote.</p>
           </div>
           <Link href="/contact" className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-[13px] font-semibold border border-vermillion text-vermillion hover:bg-vermillion hover:text-white transition-colors">
             Get in Touch <ArrowUpRight size={13} />

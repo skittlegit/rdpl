@@ -86,7 +86,7 @@ export default function ServicesGrid() {
                 <h3 className="text-[15px] font-semibold text-ink dark:text-paper mb-1.5 group-hover:text-vermillion transition-colors">
                   {title}
                 </h3>
-                <p className="text-[13px] text-mid leading-relaxed mb-3 max-w-2xl">{desc}</p>
+                <p className="text-[13px] text-ink/65 dark:text-paper/55 leading-relaxed mb-3 max-w-2xl">{desc}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {tags.map((t) => (
                     <span

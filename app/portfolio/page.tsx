@@ -157,7 +157,7 @@ export default function PortfolioPage() {
               </button>
             ))}
           </div>
-          <p className="text-[11px] text-mid mb-8">
+          <p className="text-[11px] text-ink/55 dark:text-paper/45 mb-8">
             Showing {shown.length} of {typedProjects.length} projects
           </p>
 
@@ -200,7 +200,7 @@ export default function PortfolioPage() {
                     <p className="text-[13px] font-semibold text-ink dark:text-paper leading-tight mb-0.5">
                       {project.title}
                     </p>
-                    <p className="text-[11px] text-mid leading-snug">{project.detail}</p>
+                    <p className="text-[11px] text-ink/60 dark:text-paper/50 leading-snug">{project.detail}</p>
                   </div>
                 </motion.div>
               ))}
@@ -208,7 +208,7 @@ export default function PortfolioPage() {
           </motion.div>
 
           {shown.length === 0 && (
-            <div className="text-center py-24 text-mid text-[14px]">
+            <div className="text-center py-24 text-ink/55 dark:text-paper/45 text-[14px]">
               No projects in this category yet.
             </div>
           )}
@@ -222,7 +222,7 @@ export default function PortfolioPage() {
             <p className="font-display text-2xl text-ink dark:text-paper tracking-[-0.01em]">
               Your project could be next.
             </p>
-            <p className="text-[13px] text-mid mt-1.5">
+            <p className="text-[13px] text-ink/65 dark:text-paper/55 mt-1.5">
               Let&apos;s create something remarkable for your brand. Tell us about your brief.
             </p>
           </div>

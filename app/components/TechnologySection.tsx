@@ -85,18 +85,18 @@ export default function TechnologySection() {
               <h3 className={`font-display text-2xl font-bold tracking-[-0.01em] mb-0.5 ${accentClass}`}>
                 {name}
               </h3>
-              <p className="text-[12px] font-medium text-mid mb-8">{category}</p>
+              <p className="text-[12px] font-medium text-vermillion/70 mb-8">{category}</p>
 
               <div className="grid grid-cols-2 gap-x-4 gap-y-2.5 mb-8">
                 {features.map((f) => (
                   <div key={f} className="flex items-start gap-2">
                     <CheckCircle2 size={11} className={`${accentClass} mt-[2px] shrink-0`} />
-                    <span className="text-[12px] text-mid leading-snug">{f}</span>
+                    <span className="text-[12px] text-ink/65 dark:text-paper/55 leading-snug">{f}</span>
                   </div>
                 ))}
               </div>
 
-              <p className="text-[11px] text-mid leading-relaxed border-t border-zinc-100 dark:border-zinc-800 pt-4">
+              <p className="text-[11px] text-ink/60 dark:text-paper/50 leading-relaxed border-t border-zinc-100 dark:border-zinc-800 pt-4">
                 {note}
               </p>
             </motion.div>

@@ -11,7 +11,7 @@
   --color-paper-soft:       #ECEAE4;   /* secondary light surface         */
   --color-vermillion:       #C84B0C;   /* Pantone 166 — print red-orange  */
   --color-vermillion-dark:  #a03c09;
-  --color-mid:              #8A8278;   /* warm mid-gray — recycled paper  */
+  --color-mid:              #6B6560;   /* warm mid-gray — recycled paper  */
 
   /* ── Type scale ─────────────────────────────────────────────────────── */
   --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
@@ -33,7 +33,7 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  background-image: radial-gradient(circle, rgba(15,14,12,0.045) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(15,14,12,0.09) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 

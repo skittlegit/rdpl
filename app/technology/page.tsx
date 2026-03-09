@@ -148,7 +148,7 @@ export default function TechnologyPage() {
               <div className="font-display text-[6rem] font-bold text-ink/5 dark:text-paper/5 leading-none select-none mb-6">
                 HP
               </div>
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-mid mb-4">
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-vermillion/80 mb-4">
                 Key Specifications
               </p>
               <div className="space-y-0">
@@ -164,7 +164,7 @@ export default function TechnologyPage() {
                     key={k}
                     className="flex items-center justify-between py-3 border-b border-zinc-100 dark:border-zinc-700/60 last:border-0"
                   >
-                    <span className="text-[12px] text-mid">{k}</span>
+                    <span className="text-[12px] text-ink/60 dark:text-paper/50">{k}</span>
                     <span className="text-[12px] font-semibold text-ink dark:text-paper">{v}</span>
                   </div>
                 ))}
@@ -185,7 +185,7 @@ export default function TechnologyPage() {
               <div className="font-display text-[5.5rem] font-bold text-ink/5 dark:text-paper/5 leading-none select-none mb-6">
                 ECO
               </div>
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-mid mb-4">
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-vermillion/80 mb-4">
                 Key Specifications
               </p>
               <div className="space-y-0">
@@ -201,7 +201,7 @@ export default function TechnologyPage() {
                     key={k}
                     className="flex items-center justify-between py-3 border-b border-zinc-200 dark:border-zinc-700/60 last:border-0"
                   >
-                    <span className="text-[12px] text-mid">{k}</span>
+                    <span className="text-[12px] text-ink/60 dark:text-paper/50">{k}</span>
                     <span className="text-[12px] font-semibold text-ink dark:text-paper">{v}</span>
                   </div>
                 ))}
@@ -311,7 +311,7 @@ export default function TechnologyPage() {
             <p className="font-display text-2xl text-ink dark:text-paper tracking-[-0.01em]">
               Need a print specification?
             </p>
-            <p className="text-[13px] text-mid mt-1.5">
+            <p className="text-[13px] text-ink/65 dark:text-paper/55 mt-1.5">
               Our team can advise on the best media, machine, and method for your application.
             </p>
           </div>

@@ -48,7 +48,7 @@ export default function WhatsAppWidget() {
             <p className="text-xs font-semibold text-ink dark:text-paper leading-snug mb-0.5">
               Got a signage project?
             </p>
-            <p className="text-[11px] text-mid leading-relaxed">
+            <p className="text-[11px] text-ink/65 dark:text-paper/55 leading-relaxed">
               Chat with us on WhatsApp for quick quotes &amp; B2B file sharing.
             </p>
           </motion.div>

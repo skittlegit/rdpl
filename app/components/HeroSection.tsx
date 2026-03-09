@@ -67,7 +67,7 @@ export default function HeroSection() {
           {/* Label */}
           <motion.p
             variants={up}
-            className="text-[10px] font-bold uppercase tracking-[0.22em] text-mid mb-8"
+            className="text-[10px] font-bold uppercase tracking-[0.22em] text-vermillion/80 mb-8"
           >
             Reddys Digital&nbsp;&nbsp;&nbsp;&nbsp;Hyderabad&nbsp;&nbsp;&nbsp;&nbsp;Est.&nbsp;2004
           </motion.p>
@@ -84,7 +84,7 @@ export default function HeroSection() {
           {/* Sub */}
           <motion.p
             variants={up}
-            className="text-base md:text-lg text-mid max-w-lg leading-relaxed mb-10"
+            className="text-base md:text-lg text-ink/70 dark:text-paper/60 max-w-lg leading-relaxed mb-10"
           >
             ACP boards, fleet graphics, LED signage and POP displays —
             designed, printed, and fabricated in-house at our
@@ -121,7 +121,7 @@ export default function HeroSection() {
               <p className="font-display text-2xl md:text-3xl font-bold text-ink dark:text-paper tracking-[-0.02em] leading-none mb-1.5">
                 {value}
               </p>
-              <p className="text-[11px] text-mid uppercase tracking-[0.12em]">{label}</p>
+              <p className="text-[11px] text-vermillion/70 uppercase tracking-[0.12em]">{label}</p>
             </div>
           ))}
         </motion.div>

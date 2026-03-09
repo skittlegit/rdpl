@@ -40,12 +40,12 @@ export default function AboutSection() {
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
             className="space-y-4 pt-1"
           >
-            <p className="text-mid leading-relaxed">
+            <p className="text-ink/70 dark:text-paper/60 leading-relaxed">
               Founded in 2004, Reddys Digital Pvt. Ltd. is one of India&apos;s most trusted manufacturers
               of corporate signage, fleet graphics, and POP displays. Our 50,000&nbsp;sq.ft. Cherlapally
               campus handles every step — design, printing, fabrication, and installation — under one roof.
             </p>
-            <p className="text-mid leading-relaxed">
+            <p className="text-ink/70 dark:text-paper/60 leading-relaxed">
               We serve BFSI, healthcare, pharma, FMCG, hospitality, and retail sectors with dedicated
               project managers ensuring SLA compliance at every touchpoint — pan-India.
             </p>
@@ -65,7 +65,7 @@ export default function AboutSection() {
                 {num}
                 <span className="text-base font-sans font-semibold text-vermillion ml-1.5">{unit}</span>
               </div>
-              <p className="text-[13px] text-mid leading-relaxed">{desc}</p>
+              <p className="text-[13px] text-ink/65 dark:text-paper/55 leading-relaxed">{desc}</p>
             </motion.div>
           ))}
         </div>

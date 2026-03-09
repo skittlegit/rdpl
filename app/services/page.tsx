@@ -110,7 +110,7 @@ export default function ServicesPage() {
                   {includes.map((inc) => (
                     <li key={inc} className="flex items-start gap-2">
                       <CheckCircle2 size={11} className="text-vermillion mt-[3px] shrink-0" />
-                      <span className="text-[12px] text-mid leading-snug">{inc}</span>
+                      <span className="text-[12px] text-ink/65 dark:text-paper/55 leading-snug">{inc}</span>
                     </li>
                   ))}
                 </ul>
@@ -146,7 +146,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="font-display text-2xl text-ink dark:text-paper tracking-[-0.01em]">Start your project today.</p>
-            <p className="text-[13px] text-mid mt-1.5">Tell us what you need — we send a detailed quote within 24 hours.</p>
+            <p className="text-[13px] text-ink/65 dark:text-paper/55 mt-1.5">Tell us what you need — we send a detailed quote within 24 hours.</p>
           </div>
           <Link href="/contact" className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-[13px] font-semibold border border-vermillion text-vermillion hover:bg-vermillion hover:text-white transition-colors">
             Request a Quote <ArrowUpRight size={13} />
