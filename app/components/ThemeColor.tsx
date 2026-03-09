@@ -4,28 +4,30 @@ import { useEffect } from "react";
 const LIGHT = "#F6F3EE"; // paper
 const DARK  = "#0F0E0C"; // ink
 
-/**
- * Replaces any media-queried theme-color metas with a single authoritative
- * one, then keeps it in sync via MutationObserver so it fires the instant
- * next-themes toggles the class on <html> — no React re-render delay.
- */
 function apply(isDark: boolean) {
   const color = isDark ? DARK : LIGHT;
-  // Remove Next.js-generated media-queried metas to avoid browser picking
-  // the wrong one based on OS preference instead of the in-app toggle.
+  const scheme = isDark ? "dark" : "light";
+  // Remove Next.js-generated media-queried metas so the browser uses only ours.
   document.querySelectorAll('meta[name="theme-color"]').forEach((el) => el.remove());
   const meta = document.createElement("meta");
   meta.name = "theme-color";
   meta.content = color;
   document.head.appendChild(meta);
+  // color-scheme tells Safari/Chrome to paint their own UI chrome accordingly.
+  document.documentElement.style.colorScheme = scheme;
 }
 
+/**
+ * Watches <html class> for next-themes toggles and updates theme-color +
+ * color-scheme inside requestAnimationFrame so the browser repaints the
+ * status bar in the same frame as the rest of the UI.
+ */
 export default function ThemeColor() {
   useEffect(() => {
     const html = document.documentElement;
-    apply(html.classList.contains("dark"));
+    requestAnimationFrame(() => apply(html.classList.contains("dark")));
     const observer = new MutationObserver(() =>
-      apply(html.classList.contains("dark"))
+      requestAnimationFrame(() => apply(html.classList.contains("dark")))
     );
     observer.observe(html, { attributes: true, attributeFilter: ["class"] });
     return () => observer.disconnect();

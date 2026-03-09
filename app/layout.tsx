@@ -22,6 +22,7 @@ const dmSans = DM_Sans({
 
 /** Sets <meta name="theme-color"> based on OS preference before JS loads. */
 export const viewport: Viewport = {
+  colorScheme: "light dark",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#F6F3EE" },
     { media: "(prefers-color-scheme: dark)",  color: "#0F0E0C" },

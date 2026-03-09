@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useState, useEffect, useSyncExternalStore } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import Link from "next/link";
@@ -17,20 +17,14 @@ const links = [
   { label: "Contact",    href: "/contact"    },
 ];
 
-function useIsClient() {
-  return useSyncExternalStore(
-    (cb) => { window.addEventListener("focus", cb); return () => window.removeEventListener("focus", cb); },
-    () => true,
-    () => false
-  );
-}
-
 export default function Navbar() {
   const pathname   = usePathname();
-  const { theme, setTheme } = useTheme();
-  const isClient   = useIsClient();
+  const { resolvedTheme, setTheme } = useTheme();
+  const [isClient, setIsClient] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [open,     setOpen]     = useState(false);
+
+  useEffect(() => { setIsClient(true); }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -82,11 +76,11 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           {isClient && (
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
               className="w-8 h-8 flex items-center justify-center rounded-lg text-zinc-400 hover:text-ink dark:hover:text-paper hover:bg-ink/5 dark:hover:bg-paper/8 transition-colors"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? <Sun size={13} strokeWidth={2} /> : <Moon size={13} strokeWidth={2} />}
+              {resolvedTheme === "dark" ? <Sun size={13} strokeWidth={2} /> : <Moon size={13} strokeWidth={2} />}
             </button>
           )}
           <Link
