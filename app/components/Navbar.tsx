@@ -77,7 +77,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
           <LogoMark className="w-[22px] h-[22px]" />
           <div className="leading-none flex items-baseline gap-1">
-            <span className={`font-display italic text-[16px] font-bold transition-colors duration-300 ${isTransparent ? "text-paper" : "text-ink dark:text-paper"}`}>
+            <span className={`font-display italic text-[16px] font-bold transition-colors duration-300 ${isTransparent ? (isDark ? "text-paper" : "text-ink") : "text-ink dark:text-paper"}`}>
               Reddys
             </span>
             <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-vermillion">
@@ -99,7 +99,9 @@ export default function Navbar() {
                   active
                     ? "text-vermillion"
                     : isTransparent
-                    ? "text-paper/70 hover:text-paper"
+                    ? isDark
+                      ? "text-paper/70 hover:text-paper"
+                      : "text-mid hover:text-ink"
                     : isDark
                     ? "text-mid hover:text-paper"
                     : "text-mid hover:text-ink",
@@ -134,7 +136,9 @@ export default function Navbar() {
             aria-label="Toggle menu"
             className={`p-2 rounded-lg transition-colors ${
               isTransparent
-                ? "text-paper hover:bg-paper/10"
+                ? isDark
+                  ? "text-paper hover:bg-paper/10"
+                  : "text-mid hover:text-ink hover:bg-zinc-100"
                 : isDark
                 ? "text-mid hover:text-paper hover:bg-zinc-800"
                 : "text-mid hover:text-ink hover:bg-zinc-100"
