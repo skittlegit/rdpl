@@ -1,0 +1,28 @@
+﻿@import "tailwindcss";
+
+/* Enable class-based dark mode for next-themes */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* ── Print-industry colour palette ─────────────────────────────────── */
+  --color-ink:              #0F0E0C;   /* rich black — warm press black   */
+  --color-ink-soft:         #1C1A18;   /* secondary dark surface          */
+  --color-paper:            #F6F3EE;   /* uncoated stock white            */
+  --color-paper-soft:       #ECEAE4;   /* secondary light surface         */
+  --color-vermillion:       #C84B0C;   /* Pantone 166 — print red-orange  */
+  --color-vermillion-dark:  #a03c09;
+  --color-mid:              #8A8278;   /* warm mid-gray — recycled paper  */
+
+  /* ── Type scale ─────────────────────────────────────────────────────── */
+  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans:    var(--font-dm-sans),  "DM Sans", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
