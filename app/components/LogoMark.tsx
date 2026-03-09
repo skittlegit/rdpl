@@ -7,7 +7,7 @@
  *   1. Place your logo image at  public/logo.png  (PNG, SVG, or WebP all work)
  *   2. Change  CUSTOM_LOGO  to  true  below
  */
-const CUSTOM_LOGO = false;
+const CUSTOM_LOGO = true;
 
 export default function LogoMark({ className = "w-7 h-7" }: { className?: string }) {
   if (CUSTOM_LOGO) {
