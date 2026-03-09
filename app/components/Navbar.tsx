@@ -21,31 +21,18 @@ function useIsClient() {
   return useSyncExternalStore(() => () => {}, () => true, () => false);
 }
 
-function ThemeToggle({ compact = false }: { compact?: boolean }) {
+function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const isClient = useIsClient();
-  if (!isClient) return <div className={compact ? "w-12 h-6" : "w-14 h-7"} />;
+  if (!isClient) return <div className="w-8 h-8" />;
   const isDark = resolvedTheme === "dark";
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle colour scheme"
-      className={`relative ${compact ? "w-12 h-6" : "w-14 h-7"} rounded-full flex items-center px-1 cursor-pointer transition-all duration-300 border shrink-0`}
-      style={{
-        background:  isDark ? "#E87731" : "rgba(0,0,0,0.06)",
-        borderColor: isDark ? "#cf631d" : "rgba(0,0,0,0.10)",
-      }}
+      className="w-8 h-8 flex items-center justify-center rounded-lg text-zinc-400 hover:text-ink dark:hover:text-paper hover:bg-ink/5 dark:hover:bg-paper/8 transition-colors"
     >
-      <motion.div
-        layout
-        transition={{ type: "spring", stiffness: 420, damping: 28 }}
-        className={`${compact ? "w-4 h-4" : "w-5 h-5"} rounded-full bg-white shadow-md flex items-center justify-center`}
-        style={{ marginLeft: isDark ? "auto" : "0" }}
-      >
-        {isDark
-          ? <Moon size={compact ? 9 : 11} style={{ color: "#E87731" }} />
-          : <Sun  size={compact ? 9 : 11} className="text-yellow-500" />}
-      </motion.div>
+      {isDark ? <Sun size={14} strokeWidth={2} /> : <Moon size={14} strokeWidth={2} />}
     </button>
   );
 }
@@ -77,13 +64,13 @@ export default function Navbar() {
         scrolled
           ? "py-3 backdrop-blur-2xl border-b shadow-xl " +
             (isDark
-              ? "bg-gray-950/90 border-white/[0.06] shadow-black/50"
+              ? "bg-ink/92 border-white/[0.06] shadow-black/50"
               : "bg-white/92 border-gray-200/80 shadow-gray-100")
           : isTransparent
           ? "py-5 bg-transparent"
           : "py-4 " +
             (isDark
-              ? "bg-gray-950 border-b border-white/[0.06]"
+              ? "bg-ink border-b border-white/[0.06]"
               : "bg-white border-b border-gray-100"),
       ].join(" ")}
     >
@@ -149,7 +136,7 @@ export default function Navbar() {
 
         {/* Mobile row */}
         <div className="lg:hidden flex items-center gap-2.5">
-          <ThemeToggle compact />
+          <ThemeToggle />
           <button
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
@@ -176,7 +163,7 @@ export default function Navbar() {
             transition={{ duration: 0.22 }}
             className={`lg:hidden overflow-hidden border-t ${
               isDark
-                ? "bg-gray-950/95 backdrop-blur-2xl border-white/[0.06]"
+                ? "bg-ink/95 backdrop-blur-2xl border-white/[0.06]"
                 : "bg-white/95 backdrop-blur-2xl border-gray-100"
             }`}
           >

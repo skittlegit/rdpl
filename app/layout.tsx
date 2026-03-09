@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "./components/ThemeProvider";
+import ThemeColor from "./components/ThemeColor";
 import { Analytics } from "@vercel/analytics/next";
 
 const playfair = Playfair_Display({
@@ -19,6 +20,14 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#F6F3EE" },
+    { media: "(prefers-color-scheme: dark)",  color: "#0F0E0C" },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "Reddys Digital Pvt. Ltd. | India's Premier Signage & Branding Manufacturer",
   description:
@@ -35,7 +44,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`} suppressHydrationWarning>
       <body className="antialiased">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <ThemeColor />
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
