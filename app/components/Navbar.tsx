@@ -32,19 +32,19 @@ function ThemeToggle({ compact = false }: { compact?: boolean }) {
       aria-label="Toggle colour scheme"
       className={`relative ${compact ? "w-12 h-6" : "w-14 h-7"} rounded-full flex items-center px-1 cursor-pointer transition-all duration-300 border shrink-0`}
       style={{
-        background:  isDark ? "#E87731" : "rgba(0,0,0,0.06)",
-        borderColor: isDark ? "#cf631d" : "rgba(0,0,0,0.10)",
+        background:  isDark ? "#C84B0C" : "rgba(15,14,12,0.06)",
+        borderColor: isDark ? "#a03c09" : "rgba(15,14,12,0.10)",
       }}
     >
       <motion.div
         layout
         transition={{ type: "spring", stiffness: 420, damping: 28 }}
-        className={`${compact ? "w-4 h-4" : "w-5 h-5"} rounded-full bg-white shadow-md flex items-center justify-center`}
+        className={`${compact ? "w-4 h-4" : "w-5 h-5"} rounded-full bg-paper shadow-md flex items-center justify-center`}
         style={{ marginLeft: isDark ? "auto" : "0" }}
       >
         {isDark
-          ? <Moon size={compact ? 9 : 11} style={{ color: "#E87731" }} />
-          : <Sun  size={compact ? 9 : 11} className="text-yellow-500" />}
+          ? <Moon size={compact ? 9 : 11} className="text-vermillion" />
+          : <Sun  size={compact ? 9 : 11} className="text-vermillion" />}
       </motion.div>
     </button>
   );
@@ -75,16 +75,16 @@ export default function Navbar() {
       className={[
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "py-3 backdrop-blur-2xl border-b shadow-xl " +
+          ? "py-3 backdrop-blur-2xl border-b " +
             (isDark
-              ? "bg-gray-950/90 border-white/[0.06] shadow-black/50"
-              : "bg-white/92 border-gray-200/80 shadow-gray-100")
+              ? "bg-ink/90 border-zinc-800 shadow-xl shadow-ink/40"
+              : "bg-paper/92 border-zinc-200/80 shadow-sm shadow-zinc-200/60")
           : isTransparent
           ? "py-5 bg-transparent"
-          : "py-4 " +
+          : "py-4 border-b " +
             (isDark
-              ? "bg-gray-950 border-b border-white/[0.06]"
-              : "bg-white border-b border-gray-100"),
+              ? "bg-ink border-zinc-800"
+              : "bg-paper border-zinc-200"),
       ].join(" ")}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -115,10 +115,10 @@ export default function Navbar() {
                   active
                     ? "text-vermillion font-semibold"
                     : isTransparent
-                    ? "text-white/70 hover:text-white"
+                    ? "text-paper/70 hover:text-paper"
                     : isDark
-                    ? "text-zinc-400 hover:text-white"
-                    : "text-zinc-500 hover:text-zinc-900",
+                    ? "text-mid hover:text-paper"
+                    : "text-mid hover:text-ink",
                 ].join(" ")}
               >
                 {label}
@@ -139,8 +139,7 @@ export default function Navbar() {
           <ThemeToggle />
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold bg-vermillion text-white hover:opacity-90 shadow-lg transition-all duration-200 group"
-            style={{ boxShadow: "0 4px 20px rgba(200,75,12,0.28)" }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold bg-vermillion text-white hover:bg-vermillion-dark transition-colors shadow-lg shadow-vermillion/25 group"
           >
             Get a Quote
             <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
@@ -155,10 +154,10 @@ export default function Navbar() {
             aria-label="Toggle menu"
             className={`p-2 rounded-lg transition-colors ${
               isTransparent
-                ? "text-white hover:bg-white/10"
+                ? "text-paper hover:bg-paper/10"
                 : isDark
-                ? "text-zinc-300 hover:bg-white/8"
-                : "text-zinc-700 hover:bg-zinc-100"
+                ? "text-mid hover:text-paper hover:bg-zinc-800"
+                : "text-mid hover:text-ink hover:bg-zinc-100"
             }`}
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -176,8 +175,8 @@ export default function Navbar() {
             transition={{ duration: 0.22 }}
             className={`lg:hidden overflow-hidden border-t ${
               isDark
-                ? "bg-gray-950/95 backdrop-blur-2xl border-white/[0.06]"
-                : "bg-white/95 backdrop-blur-2xl border-gray-100"
+                ? "bg-ink/95 backdrop-blur-2xl border-zinc-800"
+                : "bg-paper/95 backdrop-blur-2xl border-zinc-200"
             }`}
           >
             <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex flex-col">
@@ -188,14 +187,14 @@ export default function Navbar() {
                     key={href}
                     href={href}
                     onClick={() => setMobileOpen(false)}
-                    className={`py-3 px-3 font-medium border-b last:border-b-0 rounded-lg transition-all duration-150 ${
-                      isDark ? "border-white/5" : "border-gray-100"
+                    className={`py-3 px-3 text-[14px] font-medium border-b last:border-b-0 rounded-lg transition-all duration-150 ${
+                      isDark ? "border-zinc-800" : "border-zinc-100"
                     } ${
                       active
                         ? "text-vermillion bg-vermillion/8"
                         : isDark
-                        ? "text-zinc-300 hover:text-white hover:bg-white/5"
-                        : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50"
+                        ? "text-mid hover:text-paper hover:bg-zinc-800/60"
+                        : "text-mid hover:text-ink hover:bg-zinc-100/70"
                     }`}
                   >
                     {label}
@@ -205,7 +204,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 text-center py-3 rounded-xl font-bold text-[13px] bg-vermillion text-white hover:opacity-90 transition-all"
+                className="mt-4 text-center py-3 rounded-xl font-bold text-[13px] bg-vermillion text-white hover:bg-vermillion-dark transition-colors"
               >
                 Get a Quote
               </Link>
