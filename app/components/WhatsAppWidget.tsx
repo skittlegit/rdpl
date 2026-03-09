@@ -5,7 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 function useIsClient() {
-  return useSyncExternalStore(() => () => {}, () => true, () => false);
+  return useSyncExternalStore(
+    (cb) => { window.addEventListener("focus", cb); return () => window.removeEventListener("focus", cb); },
+    () => true,
+    () => false
+  );
 }
 
 export default function WhatsAppWidget() {
