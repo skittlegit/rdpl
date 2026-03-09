@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { motion, type Variants } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 const printers = [
@@ -9,9 +9,9 @@ const printers = [
     name: "HP Latex 3600",
     category: "Indoor & Outdoor — Water-Based Inks",
     badge: "Water-Based",
-    badgeClass: "bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400",
-    accentClass: "text-blue-600 dark:text-blue-400",
-    borderClass: "border-zinc-100 dark:border-zinc-800 hover:border-blue-100 dark:hover:border-blue-900/60",
+    badgeClass: "bg-vermillion/10 dark:bg-vermillion/15 text-vermillion",
+    accentClass: "text-vermillion",
+    borderClass: "border-zinc-100 dark:border-zinc-800 hover:border-vermillion/30 dark:hover:border-vermillion/20",
     features: [
       "126-inch print width",
       "Instant-dry, no outgassing",
@@ -65,7 +65,7 @@ export default function TechnologySection() {
             href="/technology"
             className="hidden md:flex items-center gap-1 text-[12px] font-medium text-mid hover:text-ink dark:hover:text-paper transition-colors mb-1 shrink-0"
           >
-            Learn more
+            Learn more <ArrowUpRight size={12} />
           </Link>
         </div>
 

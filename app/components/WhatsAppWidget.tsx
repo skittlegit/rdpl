@@ -5,11 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 function useIsClient() {
-  return useSyncExternalStore(
-    (cb) => { window.addEventListener("focus", cb); return () => window.removeEventListener("focus", cb); },
-    () => true,
-    () => false
-  );
+  return useSyncExternalStore(() => () => {}, () => true, () => false);
 }
 
 export default function WhatsAppWidget() {
@@ -40,19 +36,19 @@ export default function WhatsAppWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.92 }}
             transition={{ duration: 0.22 }}
-            className="relative max-w-[220px] bg-white rounded-xl shadow-2xl border border-gray-100 p-3.5 pr-8"
+            className="relative max-w-[220px] bg-paper dark:bg-ink-soft rounded-xl shadow-2xl border border-zinc-200 dark:border-zinc-700 p-3.5 pr-8"
           >
             <button
               onClick={() => setShowTip(false)}
               aria-label="Dismiss WhatsApp prompt"
-              className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 transition-colors"
+              className="absolute top-2 right-2 text-mid hover:text-ink dark:hover:text-paper transition-colors"
             >
               <X size={13} />
             </button>
-            <p className="text-xs font-semibold text-[#333] leading-snug mb-0.5">
+            <p className="text-xs font-semibold text-ink dark:text-paper leading-snug mb-0.5">
               Got a signage project?
             </p>
-            <p className="text-[11px] text-gray-500 leading-relaxed">
+            <p className="text-[11px] text-mid leading-relaxed">
               Chat with us on WhatsApp for quick quotes &amp; B2B file sharing.
             </p>
           </motion.div>
