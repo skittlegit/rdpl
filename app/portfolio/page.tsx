@@ -122,10 +122,6 @@ export default function PortfolioPage() {
 
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-12 md:pb-16 bg-paper dark:bg-ink relative overflow-hidden transition-colors">
-        <div className="absolute inset-0 pointer-events-none dark:hidden"
-          style={{ backgroundImage:"radial-gradient(circle,rgba(15,14,12,0.06) 1px,transparent 1px)", backgroundSize:"28px 28px" }} />
-        <div className="absolute inset-0 pointer-events-none hidden dark:block"
-          style={{ backgroundImage:"radial-gradient(circle,rgba(255,255,255,0.055) 1px,transparent 1px)", backgroundSize:"28px 28px" }} />
         <div className="absolute pointer-events-none"
           style={{ top:"-10%", right:"-5%", width:"700px", height:"700px",
             background:"radial-gradient(circle,rgba(200,75,12,0.07) 0%,transparent 60%)" }} />

@@ -72,12 +72,6 @@ export default function AboutPage() {
 
       {/* Hero */}
       <section className="pt-28 md:pt-36 pb-0 bg-paper dark:bg-ink relative overflow-hidden transition-colors">
-        {/* dot grid — light mode (dark dots) */}
-        <div className="absolute inset-0 pointer-events-none dark:hidden"
-          style={{ backgroundImage: "radial-gradient(circle,rgba(15,14,12,0.06) 1px,transparent 1px)", backgroundSize: "28px 28px" }} />
-        {/* dot grid — dark mode (light dots) */}
-        <div className="absolute inset-0 pointer-events-none hidden dark:block"
-          style={{ backgroundImage: "radial-gradient(circle,rgba(255,255,255,0.055) 1px,transparent 1px)", backgroundSize: "28px 28px" }} />
         {/* vermillion glow */}
         <div className="absolute pointer-events-none"
           style={{ top:"-10%", right:"-5%", width:"700px", height:"700px",

@@ -25,23 +25,6 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center bg-paper dark:bg-ink overflow-hidden">
 
-      {/* Dot grid — light */}
-      <div
-        className="absolute inset-0 pointer-events-none dark:hidden"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(0,0,0,0.09) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      />
-      {/* Dot grid — dark */}
-      <div
-        className="absolute inset-0 pointer-events-none hidden dark:block"
-        style={{
-          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      />
-
       {/* Vermillion radial glow */}
       <div
         className="absolute pointer-events-none"

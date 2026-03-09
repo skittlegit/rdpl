@@ -1,8 +1,8 @@
 ﻿"use client";
 
 import { useState, useEffect, useSyncExternalStore } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon, ArrowRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X, Sun, Moon, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
@@ -21,31 +21,18 @@ function useIsClient() {
   return useSyncExternalStore(() => () => {}, () => true, () => false);
 }
 
-function ThemeToggle({ compact = false }: { compact?: boolean }) {
+function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const isClient = useIsClient();
-  if (!isClient) return <div className={compact ? "w-12 h-6" : "w-14 h-7"} />;
+  if (!isClient) return <div className="w-8 h-8" />;
   const isDark = resolvedTheme === "dark";
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label="Toggle colour scheme"
-      className={`relative ${compact ? "w-12 h-6" : "w-14 h-7"} rounded-full flex items-center px-1 cursor-pointer transition-all duration-300 border shrink-0`}
-      style={{
-        background:  isDark ? "#C84B0C" : "rgba(15,14,12,0.06)",
-        borderColor: isDark ? "#a03c09" : "rgba(15,14,12,0.10)",
-      }}
+      className="w-8 h-8 rounded-lg flex items-center justify-center cursor-pointer transition-colors text-mid hover:text-vermillion hover:bg-vermillion/10 dark:hover:bg-vermillion/15"
     >
-      <motion.div
-        layout
-        transition={{ type: "spring", stiffness: 420, damping: 28 }}
-        className={`${compact ? "w-4 h-4" : "w-5 h-5"} rounded-full bg-paper shadow-md flex items-center justify-center`}
-        style={{ marginLeft: isDark ? "auto" : "0" }}
-      >
-        {isDark
-          ? <Moon size={compact ? 9 : 11} className="text-vermillion" />
-          : <Sun  size={compact ? 9 : 11} className="text-vermillion" />}
-      </motion.div>
+      {isDark ? <Sun size={16} /> : <Moon size={16} />}
     </button>
   );
 }
@@ -68,20 +55,17 @@ export default function Navbar() {
   const isTransparent = isHome && !scrolled;
 
   return (
-    <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+    <nav
       className={[
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "py-3 backdrop-blur-2xl border-b " +
+          ? "py-2.5 backdrop-blur-2xl border-b " +
             (isDark
-              ? "bg-ink/90 border-zinc-800 shadow-xl shadow-ink/40"
-              : "bg-paper/92 border-zinc-200/80 shadow-sm shadow-zinc-200/60")
+              ? "bg-ink/90 border-zinc-800 shadow-lg shadow-ink/30"
+              : "bg-paper/90 border-zinc-200/80 shadow-sm")
           : isTransparent
-          ? "py-5 bg-transparent"
-          : "py-4 border-b " +
+          ? "py-4 bg-transparent"
+          : "py-3 border-b " +
             (isDark
               ? "bg-ink border-zinc-800"
               : "bg-paper border-zinc-200"),
@@ -103,7 +87,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center">
+        <nav className="hidden lg:flex items-center gap-1">
           {links.map(({ label, href }) => {
             const active = href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
             return (
@@ -111,9 +95,9 @@ export default function Navbar() {
                 key={href}
                 href={href}
                 className={[
-                  "relative px-3.5 py-2 text-[13px] font-medium tracking-wide rounded-md transition-colors duration-200",
+                  "relative px-3 py-1.5 text-[13px] font-medium tracking-wide transition-colors duration-200",
                   active
-                    ? "text-vermillion font-semibold"
+                    ? "text-vermillion"
                     : isTransparent
                     ? "text-paper/70 hover:text-paper"
                     : isDark
@@ -123,11 +107,7 @@ export default function Navbar() {
               >
                 {label}
                 {active && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 rounded-md bg-vermillion/10 dark:bg-vermillion/15"
-                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                  />
+                  <span className="absolute bottom-0 left-3 right-3 h-[1.5px] bg-vermillion rounded-full" />
                 )}
               </Link>
             );
@@ -135,20 +115,20 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop right controls */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3">
           <ThemeToggle />
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-[13px] font-bold bg-vermillion text-white hover:bg-vermillion-dark transition-colors shadow-lg shadow-vermillion/25 group"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-[12px] font-semibold border border-vermillion text-vermillion hover:bg-vermillion hover:text-white transition-all duration-200 group"
           >
             Get a Quote
-            <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+            <ArrowUpRight size={12} className="group-hover:-translate-y-px group-hover:translate-x-px transition-transform" />
           </Link>
         </div>
 
         {/* Mobile row */}
-        <div className="lg:hidden flex items-center gap-2.5">
-          <ThemeToggle compact />
+        <div className="lg:hidden flex items-center gap-1.5">
+          <ThemeToggle />
           <button
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
@@ -172,14 +152,14 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.22 }}
+            transition={{ duration: 0.2 }}
             className={`lg:hidden overflow-hidden border-t ${
               isDark
                 ? "bg-ink/95 backdrop-blur-2xl border-zinc-800"
                 : "bg-paper/95 backdrop-blur-2xl border-zinc-200"
             }`}
           >
-            <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex flex-col">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex flex-col gap-0.5">
               {links.map(({ label, href }) => {
                 const active = pathname === href;
                 return (
@@ -187,9 +167,7 @@ export default function Navbar() {
                     key={href}
                     href={href}
                     onClick={() => setMobileOpen(false)}
-                    className={`py-3 px-3 text-[14px] font-medium border-b last:border-b-0 rounded-lg transition-all duration-150 ${
-                      isDark ? "border-zinc-800" : "border-zinc-100"
-                    } ${
+                    className={`py-2.5 px-3 text-[14px] font-medium rounded-lg transition-colors duration-150 ${
                       active
                         ? "text-vermillion bg-vermillion/8"
                         : isDark
@@ -201,17 +179,19 @@ export default function Navbar() {
                   </Link>
                 );
               })}
-              <Link
-                href="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="mt-4 text-center py-3 rounded-xl font-bold text-[13px] bg-vermillion text-white hover:bg-vermillion-dark transition-colors"
-              >
-                Get a Quote
-              </Link>
+              <div className="pt-2 mt-1 border-t border-zinc-200 dark:border-zinc-800">
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileOpen(false)}
+                  className="block text-center py-2.5 rounded-lg text-[13px] font-semibold border border-vermillion text-vermillion hover:bg-vermillion hover:text-white transition-colors"
+                >
+                  Get a Quote
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 }
