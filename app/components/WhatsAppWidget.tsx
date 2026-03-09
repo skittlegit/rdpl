@@ -1,15 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+
+function useIsClient() {
+  return useSyncExternalStore(
+    (cb) => { window.addEventListener("focus", cb); return () => window.removeEventListener("focus", cb); },
+    () => true,
+    () => false
+  );
+}
 
 export default function WhatsAppWidget() {
   const [showTip, setShowTip] = useState(false);
   const [dismissed, setDismissed] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => { setIsClient(true); }, []);
+  const isClient = useIsClient();
 
   useEffect(() => {
     // Show tooltip after 4 seconds
