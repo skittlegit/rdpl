@@ -1,6 +1,5 @@
 ﻿import Navbar from "./Navbar";
 import Footer from "./Footer";
-import WhatsAppWidget from "./WhatsAppWidget";
 import type { ReactNode } from "react";
 
 export default function PageShell({ children }: { children: ReactNode }) {
@@ -11,7 +10,6 @@ export default function PageShell({ children }: { children: ReactNode }) {
         {children}
       </div>
       <Footer />
-      <WhatsAppWidget />
     </>
   );
 }

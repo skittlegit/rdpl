@@ -74,16 +74,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
+        <Link href="/" className="flex items-center shrink-0">
           <LogoMark className="w-[22px] h-[22px]" />
-          <div className="leading-none flex items-baseline gap-1">
-            <span className={`font-display italic text-[16px] font-bold transition-colors duration-300 ${isTransparent ? (isDark ? "text-paper" : "text-ink") : "text-ink dark:text-paper"}`}>
-              Reddys
-            </span>
-            <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-vermillion">
-              Digital
-            </span>
-          </div>
         </Link>
 
         {/* Desktop nav */}

@@ -4,7 +4,6 @@ import AboutSection from "./components/AboutSection";
 import ServicesGrid from "./components/ServicesGrid";
 import TechnologySection from "./components/TechnologySection";
 import Footer from "./components/Footer";
-import WhatsAppWidget from "./components/WhatsAppWidget";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <ServicesGrid />
       <TechnologySection />
       <Footer />
-      <WhatsAppWidget />
     </main>
   );
 }
