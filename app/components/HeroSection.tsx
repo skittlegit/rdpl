@@ -102,7 +102,7 @@ export default function HeroSection() {
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium text-ink dark:text-paper/80 bg-paper-soft dark:bg-zinc-800/60 hover:bg-zinc-200/80 dark:hover:bg-zinc-700/60 transition-colors border border-zinc-200 dark:border-zinc-700/50"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium text-ink dark:text-paper/80 bg-paper-soft dark:bg-zinc-800/60 hover:bg-zinc-200/80 dark:hover:bg-zinc-700/60 transition-colors border border-zinc-200 dark:border-zinc-700"
             >
               View Services
             </Link>

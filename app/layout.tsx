@@ -23,6 +23,10 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#EDE9E3" },
+    { media: "(prefers-color-scheme: dark)",  color: "#0F0E0C" },
+  ],
 };
 
 export const metadata: Metadata = {
@@ -40,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`} suppressHydrationWarning>
-      <body className="antialiased">
+      <body className="antialiased bg-paper dark:bg-ink">
         <ThemeProvider>{children}</ThemeProvider>
         <Analytics />
       </body>

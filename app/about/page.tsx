@@ -205,7 +205,7 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {values.map(({ icon: Icon, title, desc }, i) => (
               <motion.div key={title} variants={fade} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}
-                className="border border-zinc-200 dark:border-zinc-700 rounded-2xl p-6 bg-paper-soft dark:bg-ink-soft hover:border-vermillion/40 transition-colors">
+                className="border border-zinc-200 dark:border-zinc-700 rounded-2xl p-6 bg-paper dark:bg-ink hover:border-vermillion/40 transition-colors">
                 <div className="w-10 h-10 rounded-xl bg-vermillion/10 dark:bg-vermillion/15 flex items-center justify-center mb-5">
                   <Icon size={16} className="text-vermillion" />
                 </div>

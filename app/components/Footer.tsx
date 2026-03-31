@@ -52,7 +52,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-paper-soft dark:bg-ink border-t border-zinc-200 dark:border-zinc-800/50 transition-colors">
+    <footer className="bg-paper-soft dark:bg-ink border-t border-zinc-200 dark:border-zinc-800 transition-colors">
       <div className="max-w-7xl mx-auto px-6 pt-14 pb-8">
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
@@ -153,7 +153,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 border-t border-zinc-200 dark:border-zinc-800/40 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-ink/45 dark:text-paper/35">
+        <div className="pt-6 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-ink/45 dark:text-paper/35">
           <p>&copy; {new Date().getFullYear()} Reddys Digital Pvt. Ltd. All rights reserved.</p>
           <div className="flex items-center gap-3 flex-wrap">
             {socials.map(({ label, href }) => (
