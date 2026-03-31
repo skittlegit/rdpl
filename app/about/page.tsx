@@ -135,7 +135,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder */}
-      <section className="py-12 md:py-20 lg:py-28 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-12 md:py-20 lg:py-28 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <SectionLabel text="Founder" />
           <div className="grid lg:grid-cols-[1fr_auto] gap-10 md:gap-16 items-start">
@@ -145,7 +145,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-vermillion mb-7">Founder &amp; Managing Director</p>
               <div className="space-y-5 text-[14px] leading-[1.8] text-ink/75 dark:text-paper/65">
-                <p>Srinivas founded Reddys Digital in 2004 with a single eco-solvent printer and an unwavering belief that quality visual communication could define a brand&apos;s physical presence. Starting with a team of four in Cherlapalli, he built the company from the ground up — investing in technology, process discipline, and people before margins.</p>
+                <p>A. Venkat Reddy founded Reddys Digital in 2004 with a single eco-solvent printer and an unwavering belief that quality visual communication could define a brand&apos;s physical presence. Starting with a team of four in Cherlapalli, he built the company from the ground up — investing in technology, process discipline, and people before margins.</p>
                 <p>His background in industrial manufacturing gave Reddys Digital its defining edge: the discipline of a factory floor applied to creative output. Under his leadership, every major capability — large-format printing, ACP fabrication, LED signage assembly, fleet graphics, and pan-India installation — was brought fully in-house rather than sub-contracted.</p>
                 <p>Today, twenty years on, the 50,000 sq.ft. Cherlapalli campus and a client roster spanning banking, healthcare, pharma, and retail are a direct reflection of that founding philosophy — do the work properly, or do not do it at all.</p>
               </div>
@@ -154,7 +154,7 @@ export default function AboutPage() {
               <div className="aspect-[4/5] w-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
                 <div className="text-center px-6">
                   <div className="w-20 h-20 rounded-full bg-vermillion/10 dark:bg-vermillion/15 flex items-center justify-center mx-auto mb-4">
-                    <span className="font-display italic text-vermillion text-3xl font-bold select-none">K</span>
+                    <span className="font-display italic text-vermillion text-3xl font-bold select-none">A</span>
                   </div>
                   <p className="text-[11px] tracking-[0.14em] uppercase text-zinc-400 dark:text-zinc-500 font-medium">Portrait</p>
                 </div>
@@ -169,7 +169,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-12 md:py-20 lg:py-28 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-12 md:py-20 lg:py-28 bg-paper dark:bg-ink border-t border-zinc-200 dark:border-zinc-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <SectionLabel text="Our Journey" />
           <h2 className="font-display text-3xl md:text-[2.6rem] text-ink dark:text-paper leading-[1.05] tracking-[-0.02em] mb-14">
@@ -196,7 +196,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-12 md:py-20 lg:py-28 bg-paper dark:bg-ink border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-12 md:py-20 lg:py-28 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <SectionLabel text="How We Work" />
           <h2 className="font-display text-3xl md:text-[2.6rem] text-ink dark:text-paper leading-[1.05] tracking-[-0.02em] mb-12">
@@ -218,7 +218,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-10 md:py-16 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-10 md:py-16 bg-paper dark:bg-ink border-t border-zinc-200 dark:border-zinc-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="font-display text-2xl text-ink dark:text-paper tracking-[-0.01em]">Ready to build your brand presence?</p>

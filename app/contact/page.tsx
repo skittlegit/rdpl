@@ -220,7 +220,7 @@ export default function ContactPage() {
       </section>
 
       {/*  Address + Hours + WhatsApp  */}
-      <section className="py-12 md:py-20 lg:py-28 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-700 transition-colors">
+      <section className="py-12 md:py-20 lg:py-28 bg-paper-soft dark:bg-ink-soft border-t border-zinc-200 dark:border-zinc-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <SectionLabel text="Visit & Connect" />
           <div className="grid md:grid-cols-3 gap-4">

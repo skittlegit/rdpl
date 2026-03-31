@@ -23,7 +23,7 @@ const stats = [
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center bg-paper dark:bg-ink overflow-hidden">
+    <section className="relative min-h-dvh flex flex-col justify-center bg-paper dark:bg-ink overflow-hidden">
 
       {/* Vermillion radial glow */}
       <div
