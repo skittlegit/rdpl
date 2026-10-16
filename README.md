@@ -1,63 +1,30 @@
-# Reddys Digital — Corporate Website
+# Reddys Digital â€” Website
 
-Official website for **Reddys Digital Pvt. Ltd.**, a Hyderabad-based large-format printing, signage, and branding company founded in 2004 by **A. Venkat Reddy**.
+Single-page website for **Reddys Digital Pvt. Ltd.**, a signage and large-format printing company in Cherlapally, Hyderabad.
 
-## About Reddys Digital
+## Editing content
 
-Reddys Digital is a fully integrated visual communications company operating from a 50,000 sq.ft. campus in Cherlapalli, Hyderabad. With over two decades in the industry and 500+ corporate clients across 100+ cities, we handle everything in-house — design, printing, fabrication, and installation, with zero sub-contractors.
+All copy lives in [`app/content.ts`](app/content.ts): company details, stats, clients, services, work, industries, machinery and contacts. Edit that file; the page updates automatically.
 
-**Core services:**
-- Corporate Signage (name boards, reception panels, wayfinding systems)
-- ACP Cladding & Fabrication (facade panels, 3D letters, laser-cut metal)
-- Fleet Graphics (vinyl wraps, magnetic panels, livery for trucks & buses)
-- Inshop & POP Displays (standees, retail kits, fabric tension displays)
-- Digital & Wide-Format Printing (HP Latex, Eco-Solvent, large-format)
-- LED Signage & Illuminated Displays
+- **Client logos:** add images to `public/clients/` and render them in the Clients section of `app/page.tsx`.
+- **Project photos:** add images to `public/work/` and set `image: "/work/your-photo.jpg"` on the project in `content.ts`.
 
-**Credentials:**
-- HP Latex Gold-tier certified production partner
-- GREENGUARD-aligned, water-based ink processes
-- Pan-India installation and logistics network
+## Structure
 
-## Tech Stack
+```
+app/
+  content.ts    # all site copy
+  page.tsx      # the page: header, hero, clients, services, work, capabilities, about, contact
+  layout.tsx    # fonts, metadata, analytics
+  globals.css   # colour tokens
+next.config.ts  # redirects old /about, /services, ... URLs to page sections
+```
 
-- **Framework:** [Next.js 15](https://nextjs.org) (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS v4
-- **Animations:** Framer Motion
-- **Icons:** Lucide React
+Stack: Next.js, Tailwind CSS v4, Vercel Analytics.
 
-## Pages
-
-| Route | Description |
-|---|---|
-| `/` | Home — hero, about snapshot, services grid, technology |
-| `/about` | Company story, founder, milestones, values, credentials |
-| `/services` | Full service catalogue |
-| `/technology` | Equipment and print technology details |
-| `/portfolio` | Project showcase |
-| `/contact` | Contact form and office details |
-
-## Getting Started
+## Development
 
 ```bash
 npm install
 npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the site locally.
-
-## Project Structure
-
-```
-app/
-  page.tsx              # Home page
-  layout.tsx            # Root layout with Navbar & Footer
-  about/page.tsx        # About page
-  services/page.tsx     # Services page
-  technology/page.tsx   # Technology page
-  portfolio/page.tsx    # Portfolio page
-  contact/page.tsx      # Contact page
-  components/           # Shared UI components
-public/                 # Static assets
 ```

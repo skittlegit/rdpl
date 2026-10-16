@@ -1,50 +1,44 @@
 ﻿@import "tailwindcss";
 
-/* Enable class-based dark mode for next-themes */
-@variant dark (&:where(.dark, .dark *));
-
 @theme {
-  /* ── Print-industry colour palette ─────────────────────────────────── */
-  --color-ink:              #0F0E0C;   /* rich black — warm press black   */
-  --color-ink-soft:         #1C1A18;   /* secondary dark surface          */
-  --color-paper:            #EDE9E3;   /* uncoated stock white            */
-  --color-paper-soft:       #E4E0D9;   /* secondary light surface         */
-  --color-vermillion:       #C84B0C;   /* Pantone 166 — print red-orange  */
-  --color-vermillion-dark:  #a03c09;
-  --color-mid:              #6B6560;   /* warm mid-gray — recycled paper  */
+  /* Colours taken from the logo, used sparingly */
+  --color-orange: #e56e1a;
+  --color-orange-ink: #b4520e; /* orange dark enough for text on paper */
+  --color-slate: #505d6d;
+  --color-ink: #16191e;
+  --color-paper: #f5f3ef;
+  --color-paper-deep: #ebe7e0;
+  --color-line: #d8d3cb;
 
-  /* ── Type scale ─────────────────────────────────────────────────────── */
-  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
-  --font-sans:    var(--font-dm-sans),  "DM Sans", system-ui, sans-serif;
+  /* IBM Plex Sans, loaded in layout.tsx */
+  --font-sans: var(--font-plex-sans), system-ui, sans-serif;
 }
 
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-/* Safe-area insets for mobile browsers with notches / dynamic toolbars */
-@supports (padding: env(safe-area-inset-bottom)) {
-  body {
-    padding-top:    env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
 }
 
 body {
-  font-family: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-paper);
+  color: var(--color-ink);
 }
 
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  background-image: radial-gradient(circle, rgba(15,14,12,0.09) 1px, transparent 1px);
-  background-size: 28px 28px;
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
-.dark body::after {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+/* A quiet entrance for the hero. */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.rise {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise { animation: none; }
 }

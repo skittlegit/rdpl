@@ -1,51 +1,26 @@
-import type { Metadata, Viewport } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
-import "./globals.css";
-import ThemeProvider from "./components/ThemeProvider";
+import type { Metadata } from "next";
+import { IBM_Plex_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
-const playfair = Playfair_Display({
+const plex = IBM_Plex_Sans({
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
-  variable: "--font-playfair",
-  weight: ["400", "700", "800", "900"],
-  style: ["normal", "italic"],
+  variable: "--font-plex-sans",
   display: "swap",
 });
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  viewportFit: "cover",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#EDE9E3" },
-    { media: "(prefers-color-scheme: dark)",  color: "#0F0E0C" },
-  ],
-};
 
 export const metadata: Metadata = {
-  title: "Reddys Digital Pvt. Ltd. | India's Premier Signage & Branding Manufacturer",
+  title: "Reddys Digital Pvt. Ltd. | Signage & Large-Format Printing, Hyderabad",
   description:
-    "Complete Signage & POP Display Solutions — ACP Signages, Acrylic Letters, Fleet Graphics, LED Signages, and Inshop Branding. Serving Corporates, Healthcare, and Retail across India from our Hyderabad facility.",
-  keywords:
-    "signage manufacturer, ACP signage, LED signage, fleet graphics, acrylic letters, inshop branding, Hyderabad, India, Reddys Digital",
+    "Manufacturer and large-format digital printer of outdoor and indoor signage in Hyderabad: ACP boards, acrylic and LED signs, in-shop branding, displays, fleet graphics and HP Latex printing.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`} suppressHydrationWarning>
-      <body className="antialiased bg-paper dark:bg-ink">
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" className={plex.variable}>
+      <body className="font-sans antialiased">
+        {children}
         <Analytics />
       </body>
     </html>
