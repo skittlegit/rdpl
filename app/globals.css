@@ -15,14 +15,15 @@
 }
 
 html {
-  /* White so pulling down past the top matches the header. */
-  background: #fff;
+  /* Dark base: iPhone Safari tints its bottom bar from the page background, so it matches
+     the footer. The cream is painted on <main> instead. */
+  background: var(--color-ink);
   scroll-behavior: smooth;
   scroll-padding-top: calc(4.5rem + env(safe-area-inset-top));
 }
 
 body {
-  background: var(--color-paper);
+  background: var(--color-ink);
   color: var(--color-ink);
 }
 

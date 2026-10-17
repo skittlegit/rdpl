@@ -85,7 +85,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main>
+      <main className="bg-paper">
         {/* Hero */}
         <section>
           <div className={`${wrap} grid gap-14 pb-12 pt-12 md:grid-cols-[1.05fr_1fr] md:items-center md:gap-16 md:pb-16 md:pt-16`}>
@@ -292,8 +292,8 @@ export default function Home() {
         </Section>
       </main>
 
-      {/* Padding fills the phone's bottom bar area; the shadow keeps it dark when the page bounces. */}
-      <footer className="bg-ink pb-[env(safe-area-inset-bottom)] text-paper/50 shadow-[0_50vh_0_50vh_var(--color-ink)]">
+      {/* Padding fills the phone's home-bar area. */}
+      <footer className="bg-ink pb-[env(safe-area-inset-bottom)] text-paper/50">
         <div className={`${wrap} flex flex-col gap-3 py-8 text-[13px] sm:flex-row sm:justify-between`}>
           <p>© {new Date().getFullYear()} {company.name}</p>
           <ul className="-my-3 flex gap-6">
