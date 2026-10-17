@@ -15,8 +15,10 @@
 }
 
 html {
+  /* White so pulling down past the top matches the header. */
+  background: #fff;
   scroll-behavior: smooth;
-  scroll-padding-top: 4.5rem;
+  scroll-padding-top: calc(4.5rem + env(safe-area-inset-top));
 }
 
 body {

@@ -64,7 +64,7 @@ function DotList({ items, dot = "text-ink/25" }: { items: string[]; dot?: string
 export default function Home() {
   return (
     <>
-      <header className="sticky top-0 z-10 border-b border-line bg-white/95 text-ink shadow-[0_1px_12px_rgba(22,25,30,0.06)] backdrop-blur-md">
+      <header className="sticky top-0 z-10 border-b border-line bg-white pt-[env(safe-area-inset-top)] text-ink shadow-[0_1px_12px_rgba(22,25,30,0.06)]">
         <div className={`${wrap} flex h-16 items-center justify-between gap-6`}>
           <a href="#" className="flex h-11 items-center gap-3">
             <Image src="/logo-mark.png" alt="" width={21} height={28} className="h-7 w-auto" />
@@ -292,7 +292,8 @@ export default function Home() {
         </Section>
       </main>
 
-      <footer className="bg-ink text-paper/50">
+      {/* Padding fills the phone's bottom bar area; the shadow keeps it dark when the page bounces. */}
+      <footer className="bg-ink pb-[env(safe-area-inset-bottom)] text-paper/50 shadow-[0_50vh_0_50vh_var(--color-ink)]">
         <div className={`${wrap} flex flex-col gap-3 py-8 text-[13px] sm:flex-row sm:justify-between`}>
           <p>© {new Date().getFullYear()} {company.name}</p>
           <ul className="-my-3 flex gap-6">
